@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, redirect, request
-from classes.conta import Conta
+from conta import Conta
 
 app = Flask(__name__)
 
