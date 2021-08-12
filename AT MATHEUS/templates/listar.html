@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista</title>
+    <title>Document</title>
 </head>
 <body>
     <h1>Listar contas!</h1>
-    <div class="lista">
-        <ul>
+    <div>
+        <table border="1">
             {% for conta in lista_conta %}
-            <li>{{ conta }}</li>
+            <tr>
+                <th>{{conta.nomeTitular}}</th>
+                <td>Número da conta:{{conta.numeroConta}}</td>
+                <td>Saldo:R$ {{conta.saldo}}</td>
+                <td>Cheque especial: R$ {{conta.chequeEspecial}}</td>
+                <td>Valor total:R$ {{conta.saldoTotal}}</td>
+            </tr><br>
+            
             {% endfor %}
-        </ul>
+        </table>
     </div>
+
+    <a href="/">Voltar!</a>
 </body>
 </html>
