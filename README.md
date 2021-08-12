@@ -6,8 +6,8 @@
 
 #### Alunos: 
       Guilherme Rodrigues Olveira
-      João Victor 
-      Vicktor Henrique
+      João Vitor Monteiro da Silva do Nascimento 
+      Victor Henrique Oliveira Gualberto
       
 #### Atividade:
     Crie uma aplicação web utilizando o Flask e os conceitos de O.O., que permita cadastrar e listar os dados de uma conta corrente, sendo eles:
