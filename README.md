@@ -10,8 +10,5 @@
       Victor Henrique Oliveira Gualberto
       
 #### Atividade:
-    Crie uma aplicação web utilizando o Flask e os conceitos de O.O., que permita cadastrar e listar os dados de uma conta corrente, sendo eles:
-    Nome titular;
-    Numero da conta;
-    Salto;
-    Cheque Especial;
+    Adicione bootstrap
+    Editar e excluir para o banco

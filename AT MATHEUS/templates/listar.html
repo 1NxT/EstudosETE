@@ -1,28 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Listar contas!</h1>
-    <div>
-        <table border="1">
-            {% for conta in lista_conta %}
-            <tr>
-                <th>{{conta.nomeTitular}}</th>
-                <td>Número da conta:{{conta.numeroConta}}</td>
-                <td>Saldo:R$ {{conta.saldo}}</td>
-                <td>Cheque especial: R$ {{conta.chequeEspecial}}</td>
-                <td>Valor total:R$ {{conta.saldoTotal}}</td>
-            </tr><br>
+{% extends "comum/static.html" %}
+{% block titulo %}Adicionar conta!{% endblock %}
+{% block conteudo %}
+    <div class="border border-3 rounded-2 border-dark">
+        <table class="table table-dark table-striped ">
+            <thead>
+                <h3>Todas as contas do banco!</h3>
+                <tr>
+                    <th scope="col">Nome do titular</th>
+                    <th scope="col">Número da conta</th>
+                    <th scope="col">Saldo</th>
+                    <th scope="col">Cheque especial</th>
+                    <th scope="col">Saldo total</th>
+                    <th scope="col">Controle das contas!</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for conta in lista_conta %}
+                <tr>
+                    <th scope="row">{{conta.nomeTitular}}</th>
+                    <td>{{conta.numeroConta}}</td>
+                    <td>R$ {{conta.saldo}}</td>
+                    <td>R$ {{conta.chequeEspecial}}</td>
+                    <td>R$ {{conta.saldoTotal}}</td>
+                    <td>
+                        <a class="btn btn-secondary  ms-2 rounded-2" href="/editar?index={{loop.index-1}}">Editar</a>
+                        <a class="btn btn-secondary  ms-2 rounded-2" href="/contas/excluir?index={{loop.index-1}}">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
             
-            {% endfor %}
         </table>
+        <a class="btn btn-secondary ms-3 rounded-2 mb-3" href="/">Voltar!</a>
     </div>
+    
+    
 
-    <a href="/">Voltar!</a>
-</body>
-</html>
+    
+{% endblock %}

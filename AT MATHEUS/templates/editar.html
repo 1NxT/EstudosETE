@@ -1,0 +1,32 @@
+{% extends "comum/static.html" %}
+{% block titulo %}Adicionar conta!{% endblock %}
+{% block conteudo %}
+
+<form action="/contas/editar" method="get" class="border border-3 rounded-2 border-dark mt-4 px-3">
+    <h3>Adicionar contas!</h3>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="nomeTitular" placeholder="Nome do titular." value="{{conta.nomeTitular}}">
+        <label for="floatingInput">Nome do titular.</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="numeroConta" placeholder="Número da conta." value="{{conta.numeroConta}}">
+        <label for="floatingInput">Número da conta.</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="saldo" placeholder="Saldo da conta." value="{{conta.saldo}}">
+        <label for="floatingInput">Saldo da conta.</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="chequeEspecial"  placeholder="Cheque especial." value="{{conta.chequeEspecial}}">
+        <label for="floatingInput">Cheque especial.</label>
+    </div>
+    <input type="hidden" name="index" value="{{index}}">
+    <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2" role="group" aria-label="Second group">
+            <button type="submit" class="btn btn-secondary rounded-2">Enviar!</button>
+            <a class="btn btn-secondary ms-3 rounded-2" href="/listarcontas">Voltar!</a>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

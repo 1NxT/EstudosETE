@@ -1,21 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Adicionar conta!</h1>
-    <form action="/conta/cadastar" method="get">
-        <input type="text" name="nomeTitular" placeholder="Nome do titular"><br>
-        <input type="text" name="numeroConta" placeholder="Número da conta"><br>
-        <input type="text" name="saldo" placeholder="Saldo da conta"><br>
-        <input type="text" name="chequeEspecial" placeholder="Cheque especial"><br>
-        <button type="submit">Enviar!</button>
+{% extends "comum/static.html" %}
+{% block titulo %}Adicionar conta!{% endblock %}
+{% block conteudo %}
+
+    <form action="/contas/cadastar" method="get" class="border border-3 rounded-2 border-dark mt-4 px-3">
+        <h3>Adicionar contas!</h3>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="nomeTitular" placeholder="Nome do titular.">
+            <label for="floatingInput">Nome do titular.</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="numeroConta" placeholder="Número da conta.">
+            <label for="floatingInput">Número da conta.</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="saldo" placeholder="Saldo da conta.">
+            <label for="floatingInput">Saldo da conta.</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="chequeEspecial" placeholder="Cheque especial.">
+            <label for="floatingInput">Cheque especial.</label>
+        </div>
+        <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="Second group">
+                <button type="submit" class="btn btn-secondary rounded-2">Enviar!</button>
+                <a class="btn btn-secondary ms-3 rounded-2" href="/">Voltar!</a>
+                
+            </div>
+        </div>
     </form>
 
-    <a href="/">Voltar!</a>
-</body>
-</html>
+{% endblock %}

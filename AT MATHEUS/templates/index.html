@@ -1,19 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <div class="botoes">
-        <h1>Banco!</h1><br>
-        <a href="/conta/cadastro">Adicionar conta.</a><br>  
-        <a href="/listarcontas">Listar contas!</a>  
+{% extends "comum/static.html" %}
+{% block titulo %}Adicionar conta!{% endblock %}
+{% block conteudo %}
+    <div class="container overflow-hidden">
+        <div class="row gx-5 mt-4 mx-0">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="../static/images/adicionar.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Adicionar conta!</h5>
+                        <p class="card-text">Aqui você pode adicionar uma nova conta!
+
+                        </p>
+                        <a href="/cadastro" class="btn btn-primary stretched-link">Adicionar conta!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card me-n4" style="width: 18rem;">
+                    <img src="../static/images/lista.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Listar contas!</h5>
+                        <p class="card-text">Aqui você ver todas as contas já adicionadas!</p>
+                        <a href="/listarcontas" class="btn btn-primary stretched-link">Listar contas!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    
-    
-</body>
-</html>
+
+{% endblock %}
